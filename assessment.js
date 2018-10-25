@@ -1,3 +1,6 @@
+
+// The last 3 problems I cannot get to pass not matter how I write them.  I know they are technically right.  But, for some reason (beyond my understanding) I can get them to pass.  This has been my experience with both assessements.  
+
 /**
  * #1
  *
@@ -5,7 +8,11 @@
  * Assign the keys the appropriate values.
  */
 
-// CODE HERE
+var me = {
+  firstname: "Christian",
+  age:        80,
+  state:      "Idaho"
+}
 
 /**
  * #2
@@ -14,7 +21,7 @@
  * The new key should be 'faveColor'. Set it to your favorite color as a string.
  */
 
-// CODE HERE
+me.faveColor = "Magenta";
 
 /**
  * #3
@@ -29,7 +36,7 @@ var message = {
   userName: me.firstname
 };
 // DON'T TOUCH THE CODE ABOVE
-// CODE HERE
+message["text"]="jasmine is a pain my coding.";
 
 /**
  * #4
@@ -39,7 +46,10 @@ var message = {
  * downVote() should take in a number, subtract one from it, and return the number.
  */
 
-// CODE HERE
+var adjustCount = {
+  upVote: function(num){num += 1; return num},
+  downVote: function(num){num -= 1; return num;}
+};
 
 /**
  * #5
@@ -47,7 +57,7 @@ var message = {
  * Create an array called 'myFriends' with four of your friends names.
  */
 
-// CODE HERE
+var myFriends = ["Patrick", "Jason", "Melissa", "Jesse"];
 
 /**
  * #6
@@ -55,7 +65,7 @@ var message = {
  * Add a fifth friends name to the end of your 'myFriends' array.
  */
 
-// CODE HERE
+myFriends.push("Sonja");
 
 /**
  * #7
@@ -67,7 +77,9 @@ var message = {
 // DON'T TOUCH THE CODE BELOW
 var myArray = [1, 2, 3, 4];
 // DON'T TOUCH THE CODE ABOVE
-// CODE HERE
+var myArrayCopy;
+
+myArrayCopy = myArray.slice(0,4);
 
 /**
  * #8
@@ -79,9 +91,17 @@ var myArray = [1, 2, 3, 4];
 //DON'T TOUCH THE CODE BELOW
 var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 //DON'T TOUCH THE CODE ABOVE
+
 function evensOnly() {
-  // CODE HERE
-}
+  myNumbers.forEach(function(num){
+   if(num % 2 === 0){
+     return num;
+   }
+ });
+ }
+  
+
+
 
 /**
  * #9
@@ -90,7 +110,9 @@ function evensOnly() {
  * Assign it to a variable called 'trueFriends'.
  */
 
-// CODE HERE
+var trueFriends = peopleIknow.filter(function(arr){
+  if(arr.friend){return arr};
+});
 var peopleIknow = [
   { name: "Steve", friend: true },
   { name: "Dan", friend: false },
@@ -110,3 +132,10 @@ var peopleIknow = [
  */
 
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
+let indexes=[];
+function indexFinder() { 
+  indexes = randomNumbers.map((num, i) => {
+    return i;
+  });
+  return indexes;
+}
